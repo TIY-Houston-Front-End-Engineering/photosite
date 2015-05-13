@@ -78,3 +78,142 @@ img {max-width:100%;}
 /**
  * YOUR CODE HERE
  */
+
+$white: rgb(240, 240, 240);
+$lightGray: rgb(136, 136, 136);
+$mediumGray: rgb(72, 69, 72);
+$darkGray: rgb(24, 24, 24);
+$red: rgb(229, 58, 66);
+$profileImage: url(https://pbs.twimg.com/profile_images/470990985648824320/puR8GEbm_400x400.jpeg);
+
+html, body {
+    background: $darkGray;
+    color: $lightGray;
+    font-family: "Open Sans";
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $white;
+}
+
+.container {
+    max-width: 60ch;
+    margin: auto;
+    padding: 1.5rem;
+
+    .toolbar {
+        font-weight: bold;
+        span {
+            &:first-child {
+                color: $white;
+            }
+        }
+    }
+
+    .page-title {
+        max-width: 200px;
+        margin: 4rem auto;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            padding-top:100%; // aspect-ratio
+            // bg image
+            background-image: $profileImage;
+            background-size: cover;
+            // make it gray
+            filter: grayscale(100%);
+            // make it a circle
+            // border-radius:50%;
+            // MAKE IT A LEAF
+            border-radius: 64px 0;
+        }
+
+        span {
+            color: white;
+            font-weight: bold;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .image {
+        position:relative;
+
+        @media (min-width: 800px) {
+            margin-right: 200px;
+        }
+
+        img {
+            filter: grayscale(100%);
+            transition: all .25s ease;
+            &:hover {
+                filter: grayscale(0);
+            }
+        }
+
+        h3 {
+            color: $lightGray;
+            margin: 2rem 0;
+            span {
+                color: $mediumGray;
+                font-size: .5em;
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            li {
+                &:first-child {
+                    font-weight: bold;
+                    color: $red;
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        background-image: url(https://d30y9cdsu7xlg0.cloudfront.net/svg/069873ef-da44-42e9-88aa-4e6ffe0d985a.svg?Expires=1431536386&Signature=Y~eaZYX9JnxT8qVPk7MvEebn01egBhGNTLyEf7KlsEjvOM-RNcHXOKBXD0A55eD2FPjMLRKm8hqIvQuYwQOLi9hndAeoHjToaOVr2hF85y79d6qc5jrlEvj-ZMEM3iL-2I9j7I-rEjQM1F~Gm7FNzGbSXaJcuXylhGRHlh2Dvms_&Key-Pair-Id=APKAI5ZVHAXN65CHVU2Q);
+                        background-size: cover;
+                        background-position: bottom center;
+                        margin-right: .5em;
+                        filter: invert(100%);
+                        opacity: .5;
+                        height: 1.5em;
+                        width: 1.5em;
+                    }
+                }
+            }
+
+            @media (min-width: 800px) {
+                position: absolute;
+                top: 0;
+                left: 100%;
+                margin: 0;
+                width: 200px;
+                padding-left: 1.5rem;
+            }
+        }
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
